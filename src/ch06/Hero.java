@@ -1,7 +1,6 @@
 package ch06;
 
 public class Hero {
-
 	String name;
 	int power;
 	int speed;
