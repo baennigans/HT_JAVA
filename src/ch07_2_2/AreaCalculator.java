@@ -1,4 +1,4 @@
-package ch07_2_1;
+package ch07_2_2;
 
 public class AreaCalculator {
 
@@ -10,7 +10,7 @@ public class AreaCalculator {
 		Triangle t = new Triangle();
 		t.name = "삼각형";
 		t.base = 4;
-		t.length = 3;
+		t.height = 3;
 		
 		Circle c = new Circle();
 		c.name = "원";
@@ -18,7 +18,17 @@ public class AreaCalculator {
 		
 		Shape[] shapes =  { s, t, c };
 		for(int i=0; i<shapes.length; i++) {
-			System.out.printf("%s의 넓이 : %.2f \n", shapes[i].name, shapes[i].area());
+			
+			if(shapes[i] instanceof Square) {
+				System.out.println("정사각형의 한변의 길이 : "+((Square)shapes[i]).length);
+			} else if(shapes[i] instanceof Triangle) {
+				System.out.println("삼각형의 밑변의 길이 : "+((Triangle)shapes[i]).base);
+				System.out.println("삼각형의 높이의 길이 : "+((Triangle)shapes[i]).height);
+			} else {
+				System.out.println("원의 반지름의 길이 : "+((Circle)shapes[i]).radius);
+			}
+			
+			System.out.printf("%s의 넓이 : %.2f \n\n", shapes[i].name, shapes[i].area());
 		}
 	}
 }
@@ -39,9 +49,9 @@ class Square extends Shape {
 
 class Triangle extends Shape {
 	int base;
-	int length;
+	int height;
 	double area() {
-		return base*length/2;
+		return base*height/2;
 	}
 }
 

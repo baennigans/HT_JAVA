@@ -1,4 +1,4 @@
-package ch07_2;
+package ch07_2_0;
 
 public class UpCastingTest {
 
