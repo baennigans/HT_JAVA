@@ -7,8 +7,10 @@ public class FlyWithInterface {
 		Rocket rocket = new Rocket();
 		
 		Flyable[] arr = { bird, copter, rocket };
+		System.out.println("=================");
 		for(int i=0; i<arr.length; i++) {
 			arr[i].fly();
+			System.out.println("=================");
 		}
 	}
 }
